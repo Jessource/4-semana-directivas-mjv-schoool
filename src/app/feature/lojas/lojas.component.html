@@ -1,0 +1,25 @@
+<h3>{{titulo}}</h3>
+
+<div id="grid">
+    <div *ngFor="let loja of lojas; index as i">
+        <div class="card-lojas">
+            <img src="{{loja.imagem}}" width="200px" height="200px">
+            <div *ngIf="lojaAExibir === i">
+                <p>Descricao da loja: {{loja.descricao}}</p>
+                <p>Endereço: {{loja.endereco}}</p>
+
+                <p [ngClass]="{'remota': loja.remota, 'nao-remota': !loja.remota}">
+                    {{loja.remota ?
+                    'Loja também pode ser encontrada remota em seu site' :
+                    'Esta loja não pode ser encotrada remota, apenas física'
+                    }}</p>
+            </div>
+            <br>
+
+            <button (click)="exibirLoja(i)">Ver mais</button>
+
+
+        </div>
+
+    </div>
+</div>

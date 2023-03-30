@@ -1,0 +1,21 @@
+.em-estoque {
+    color: green
+}
+
+.falta-estoque {
+    color: red;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 20px;
+}
+
+#botãoProduct {
+    background-color: rgb(213, 213, 235);
+}
+
+#botãoComprar {
+    background-color: rgb(231, 119, 188);
+}

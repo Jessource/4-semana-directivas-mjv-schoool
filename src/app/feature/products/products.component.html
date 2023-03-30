@@ -1,0 +1,26 @@
+<h2>{{titulo}}</h2>
+<div id="grid">
+
+
+    <div *ngFor="let produto of produtos">
+        <div class="card-produto">
+            <img src="{{produto.imagem}}" width="200px" height="250px">
+            <p (click)="clicouTag()" *ngIf="exibeProduto">Descricao: {{produto.descricao}}</p>
+            <p>Preço: {{produto.preco}}</p>
+            <p>Quantidade: {{produto.quantidade}}</p>
+            <p appBlue>Preço com desconto: {{produto.precoDesconto}}</p>
+
+            <p [ngClass]="{'em-estoque': produto.disponivel, 'falta-estoque': !produto.disponivel}">
+                "{{produto.disponivel?
+                'Em estoque' : 'Produto em falta'}}"</p>
+
+            <br>
+            <button id="botãoProduct" (click)="obterPrecoDesconto(produto)">Obter desconto de 10%</button>
+            <br><br>
+
+            <button id="botãoComprar" (click)="comprar()">Comprar</button>
+
+        </div>
+    </div>
+
+</div>
